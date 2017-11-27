@@ -1,7 +1,7 @@
 <?php
 //gitlab webhook 自动部署脚本
 
-$config = file_get_contents('./config.php');
+$config = include('./config.php');
 //ip验证
 if ($config['ip_white_on'] && !in_array($_SERVER['REMOTE_ADDR'], $config['ip_white_list'])) {
     die("Wrongful ip");

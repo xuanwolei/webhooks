@@ -3,7 +3,7 @@ $jsonData = file_get_contents('php://input');
 if (empty($jsonData)) {
     die('send fail');
 }
-$config = file_get_contents('./config.php');
+$config = include('./config.php');
 
 //ip验证
 if ($config['ip_white_on'] && !in_array($_SERVER['REMOTE_ADDR'], $config['ip_white_list'])) {
