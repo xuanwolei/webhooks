@@ -24,4 +24,5 @@ if ($content['total_commits_count']>0) {
     $res_log .= $content['user_name'] . ' 在' . date('Y-m-d H:i:s') . '向' . $content['repository']['name'] . '项目的' . $content['ref'] . '分支push了' . $content['total_commits_count'] . '个commit：' . PHP_EOL;
     $res_log .= $res.PHP_EOL;
     file_put_contents("git-webhook.txt", $res_log, FILE_APPEND);//追加写入
+    echo 'success';
 }
